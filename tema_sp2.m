@@ -48,8 +48,7 @@ F = -N*f:f:N*f;                     % vectorul de frecvente pentru generarea spe
 figure(3);
 stem(F,abs(X)); 
 title('Spectrul lui x(t)');
-xlabel('Frecventa [Hz]');
-ylabel('|X|');
+
 
 
 %Seria  Fourier Complexa ofera o descompunere a semnalului periodic intr-o
