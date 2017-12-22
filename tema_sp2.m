@@ -9,10 +9,10 @@ D = 17;
 P = 40; 
 f = 1/P;                         % frecventa semnalului
 w0 = 2*pi/P;                     % pulsatia semnalului
-t = 0:0.02:P-0.02;                 % timpul pentru o perioada 
+t = 0:0.02:P-0.02;               % timpul pentru o perioada 
 x = zeros(1,length(t));          % initializarea vectorului x care va avea ca valori 0
 x = 0.5+0.5*square(t*w0,50);     % se va inmulti semnalul cu 0.5 si se va aduna un 0.5 pentru a avea amplitudinea pe intervalul 0,1, in loc de -1,1
-t4 = 0:0.02:4*P-0.02;            % vectorul timp pentru reprezentarea pe 4 perioade
+t4 = 0:0.02:4*P-0.02;            % timpul pentru reprezentarea pe 4 perioade
 x4 = repmat(x,1,4);              % vectorul x pe 4 perioade (repmat va afisa o matrice de copii ale lui x, cu 1 rand si 4 coloane)
 
 figure(1);
@@ -30,9 +30,9 @@ end
 
 for i = 1:length(t);
     xnew(i) = 0;                    % xnew = semnalul reconstruit
-for k = -N:N
-xnew(i) = xnew(i) + (1/P)*X(k+N+1)*exp(j*k*w0*t(i));
-end
+    for k = -N:N
+         xnew(i) = xnew(i) + (1/P)*X(k+N+1)*exp(j*k*w0*t(i));
+    end
 end
 xnew4 = repmat(xnew,1,4);           % xnew cu 4 perioade
 
